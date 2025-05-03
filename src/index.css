@@ -1,0 +1,487 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Enhanced modern color scheme variables */
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --primary-light: #718bff;
+  --primary-transparent: rgba(67, 97, 238, 0.1);
+  --secondary-color: #3a0ca3;
+  --accent-color: #4cc9f0;
+  --success-color: #2ec4b6;
+  --warning-color: #ff9f1c;
+  --error-color: #e71d36;
+  
+  /* Enhanced text colors */
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-tertiary: #718096;
+  
+  /* Enhanced background colors */
+  --bg-light: #f7fafc;
+  --bg-dark: #111827;
+  
+  /* Card colors */
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #1e293b;
+  
+  /* Border colors */
+  --border-light: #e9ecef;
+  --border-dark: #3e4c5e;
+  
+  /* Enhanced shadow variables */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.04), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-focus: 0 0 0 3px rgba(99, 102, 241, 0.25);
+  
+  /* Dark mode shadows */
+  --shadow-dark-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-dark-md: 0 4px 6px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-dark-lg: 0 10px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-dark-focus: 0 0 0 3px rgba(99, 102, 241, 0.4);
+  
+  /* Enhanced gradient backgrounds */
+  --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+  --gradient-accent: linear-gradient(135deg, #4361ee 0%, #4cc9f0 100%);
+  --gradient-success: linear-gradient(135deg, #2ec4b6 0%, #2dd4bd 100%);
+  --gradient-warning: linear-gradient(135deg, #ff9f1c 0%, #ffb01f 100%);
+  --gradient-error: linear-gradient(135deg, #e71d36 0%, #f71735 100%);
+  
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Light mode defaults */
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Base font size for responsive typography */
+  font-size: 16px;
+}
+
+/* Enhanced dark mode color scheme */
+[data-theme="dark"] {
+  color: rgba(255, 255, 255, 0.92);
+  background-color: var(--bg-dark);
+  
+  /* Override specific colors for dark theme */
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-tertiary: rgba(255, 255, 255, 0.6);
+  
+  /* Enhanced dark mode colors */
+  --primary-color: #818cf8;
+  --primary-hover: #6366f1;
+  --primary-light: #a5b4fc;
+  --primary-transparent: rgba(129, 140, 248, 0.15);
+  --accent-color: #38bdf8;
+  --border-light: rgba(66, 84, 117, 0.5);
+  --border-dark: rgba(66, 84, 117, 0.8);
+  
+  /* Enhanced card bg for dark mode */
+  --card-bg-dark: rgba(30, 41, 59, 0.8);
+  
+  /* Updated box shadows for better dark mode effect */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.25);
+  --shadow-focus: 0 0 0 3px rgba(129, 140, 248, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--primary-hover);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+button {
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  padding: 0.7em 1.4em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background: var(--gradient-primary);
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-sm);
+}
+
+button:disabled {
+  background: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+/* Secondary button style */
+button.secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+button.secondary:hover {
+  background-color: var(--primary-transparent);
+  border-color: var(--primary-color);
+}
+
+[data-theme="dark"] button.secondary {
+  color: var(--accent-color);
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] button.secondary:hover {
+  background-color: var(--primary-transparent);
+  border-color: var(--accent-color);
+}
+
+/* Container for the main content */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Enhanced card styling */
+.card {
+  background-color: var(--card-bg-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: rgba(67, 97, 238, 0.1);
+}
+
+/* Dark mode cards */
+[data-theme="dark"] .card {
+  background-color: var(--card-bg-dark);
+  box-shadow: var(--shadow-dark-md);
+  border-color: transparent;
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: var(--shadow-dark-lg);
+  border-color: rgba(76, 201, 240, 0.1);
+}
+
+/* Enhanced form elements */
+input, textarea, select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) inset;
+}
+
+input:hover, textarea:hover, select:hover {
+  border-color: var(--primary-light);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color);
+  outline: 0;
+  box-shadow: var(--shadow-focus);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: var(--card-bg-dark);
+  color: var(--text-primary);
+  border-color: var(--border-dark);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15) inset;
+}
+
+[data-theme="dark"] input:hover,
+[data-theme="dark"] textarea:hover,
+[data-theme="dark"] select:hover {
+  border-color: var(--accent-color);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-dark-focus);
+}
+
+/* Form label styling */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] label {
+  color: var(--text-secondary);
+}
+
+/* Responsive grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px; /* Smaller base font size on mobile */
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Reduced padding on mobile */
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+/* Mobile navigation styles */
+.mobile-navigation {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--card-bg-light);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0.5rem;
+}
+
+[data-theme="dark"] .mobile-navigation {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.nav-button.active {
+  background-color: rgba(67, 97, 238, 0.1);
+  color: var(--primary-color);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-navigation {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 70px; /* Position above mobile navigation */
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Custom styles for the app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 1rem;
+  background-color: var(--card-bg-light);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .app-header {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 769px) {
+  .app-main {
+    flex-direction: row;
+  }
+  
+  .image-section {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+  
+  .content-section {
+    flex: 1;
+    display: flex;
+  }
+  
+  .questions-section {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+  
+  .answer-section {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+}
+
+.header-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.app-footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--card-bg-light);
+  margin-top: auto;
+  margin-bottom: 60px; /* For mobile navigation */
+}
+
+[data-theme="dark"] .app-footer {
+  background-color: var(--card-bg-dark);
+}
+
+@media (min-width: 769px) {
+  .app-footer {
+    margin-bottom: 0;
+  }
+}
